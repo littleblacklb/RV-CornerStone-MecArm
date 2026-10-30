@@ -116,4 +116,11 @@
 - 仓库/分支确认feat_joint0、唯一远端origin、上游origin/feat_joint0；索引初始为空。fetch后远端领先0、本地领先2（先前本任务文档提交），允许普通快进推送，不merge/rebase/force。
 - 当前范围为14份已跟踪任务修改和46份新交付文件；.DS_Store/.pi保持排除，未发现任务目录构建/缓存产物。将复核离线检查、精确暂存和提交后再推送；真实Keil、Windows/时钟/硬件仍未验证。
 - 提交前重新运行完整离线检查，退出0：宿主68/68、真实C跨端5/5、C ASan/UBSan、ARM适配边界语法及Keil XML静态全部通过。日志：`/var/folders/lx/q08bgxxn4qscb6nz1t4cf3wh0000gn/T/gimbal-publish-qa-9rva8nfy.log`。已确认origin的fetch/push端点为同一预期仓库，未输出含凭据的URL。
-- 精确暂存60个任务文件，逐文件核对索引与工作区字节一致；cached diff/stat与原控制接入改动已核对，diff --check、文档/链接和常见私钥/令牌签名检查通过。未暂存.DS_Store/.pi或构建产物。交付提交将明确实验性质及Keil/实机验证缺口。
+- 精确暂存60个任务文件，逐文件核对索引与工作区字节一致；cached diff/stat与原控制接入改动已核对，diff --check、文档/链接和常见私钥/令牌签名检查通过。未暂存.DS_Store/.pi或构建产物。交付提交明确实验性质及Keil/实机验证缺口。
+- 已创建功能提交`06f89ffc948157fdab775c48b900b10441b8991c`（feat(control): add gated joint0 PID auto-tuning），普通push到origin/feat_joint0成功，ls-remote确认远端提交完全一致；先前2份相关文档提交一并发布，无force/merge/rebase。
+- 功能提交后工作区仅剩原始未跟踪.DS_Store/.pi。现在补记发布收尾记录；现场G的4项验收保持未勾选，#23继续由用户暂停，不增加任何Windows/时钟/硬件通过结论。
+
+## 用户明确指定GitHub仓库
+- 用户给出https://github.com/littleblacklb/RV-CornerStone-MecArm.git。现有origin虽为同名GitHub仓库，但owner不同；此前06f89ff的origin推送是已执行事实，已向用户说明，不擅自删除/改写原远端。
+- 指定仓库ls-remote查询成功，feat_joint0尚不存在；直接按该URL普通推送本地分支，不修改origin配置、不强推。收尾记录仅3份本任务计划文件，软件源代码未再改动。
+- 指定仓库推送成功；直接向该URL执行ls-remote，确认feat_joint0=06f89ffc948157fdab775c48b900b10441b8991c。原origin不回滚/改写。补记发布记录后仅向指定仓库推送文档收尾；Keil/时钟/实机未验收和原G暂停结论不变。

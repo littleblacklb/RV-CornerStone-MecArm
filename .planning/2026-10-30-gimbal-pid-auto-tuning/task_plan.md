@@ -4,10 +4,10 @@
 实现 docs/gimbal-pid-implementation-plan.md 中关节 0 双 GM6020 自动整定的软件交付：Python BayesianOptimization + 实验管理器 + STM32 参数/测试接口 + 遥测/VOFA。本轮执行范围为软件实施与离线验证，现已完成；用户明确暂停的现场验收另存于下方后续人工待办，不计入本轮软件阶段计数，且并未验收通过。
 
 ## Current Phase
-Phase H：用户明确要求将软件交付提交并push，供Windows端fetch。原9个规划/软件阶段已完成；原G现场验收仍暂停，未执行、未通过。
+Phase I完成：06f89ff已直接普通推送littleblacklb/RV-CornerStone-MecArm的feat_joint0并核对远端一致。此前原origin发布记录保留，本地origin未修改，未强推。原G现场验收仍暂停。
 
 ## Next Step
-复核离线测试和精确暂存清单，创建明确标注未通过Keil/实机验收的交付提交，再普通推送origin/feat_joint0。
+对方从https://github.com/littleblacklb/RV-CornerStone-MecArm.git获取feat_joint0的软件交付；之后等待用户主动恢复Windows/现场验收。发布代码不等于Keil、时钟或实机验收通过。
 
 ### Phase 1: 逐轮确认需求与边界
 **Status:** complete
@@ -71,13 +71,18 @@ Phase H：用户明确要求将软件交付提交并push，供Windows端fetch。
 - [x] Windows安装运行/Keil/协议/日志/现场清单与手动清故障API说明；实际Windows未运行
 - [x] 主代理全量68+5=73项Python/跨端测试、C ASan/UBSan、ARM边界语法、Keil XML和文档/任务diff通过；无当前离线失败
 - [x] 已记录passed/failed/not-run；完整Keil/物理验收保留Phase G，不声称全部计划完成
-- [x] 无暂存/提交/推送：完整Keil构建不可在当前环境验证，未满足自动checkpoint门槛；无关.DS_Store/.pi保留
+- [x] 软件阶段收尾时未自动提交：完整Keil构建不可在当前环境验证；后续用户显式授权的提交/推送见H，无关.DS_Store/.pi保留
 
 ### Phase H: 用户授权的Git交付发布
-**Status:** in_progress
+**Status:** complete
 - [x] 确认feat_joint0跟踪origin/feat_joint0；fetch后远端不领先，本地2份先前相关文档提交
-- [ ] 复核离线测试、任务diff和精确暂存清单，创建交付提交
-- [ ] 普通推送并核对远端提交；保留无关.DS_Store/.pi及原G暂停状态
+- [x] 73项Python/跨端与C sanitizers/ARM边界/Keil静态复核通过；60个任务文件提交06f89ff
+- [x] 普通推送origin/feat_joint0并ls-remote确认06f89ffc948157fdab775c48b900b10441b8991c；保留.DS_Store/.pi及原G暂停状态
+
+### Phase I: 投递用户明确指定的仓库
+**Status:** complete
+- [x] 核对指定URL可访问、feat_joint0尚不存在；原origin是不同owner，保留其配置不变
+- [x] 普通推送软件快照到https://github.com/littleblacklb/RV-CornerStone-MecArm.git，ls-remote确认feat_joint0=06f89ffc948157fdab775c48b900b10441b8991c
 
 ## 后续人工验收（已暂停，原阶段G；不计本轮软件完成范围）
 

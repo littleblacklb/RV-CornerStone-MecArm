@@ -43,7 +43,9 @@
 - 主代理最终完整命令 `/tmp/gimbal-host-cde-venv/bin/python tests/run_gimbal_checks.py --sanitize --arm-syntax`：68项宿主+5项真实C跨端Python测试全通过，无跳过；C核心/适配mock的ASan/UBSan、ARM核心/适配边界两模式语法、Keil XML静态通过。
 - 完整QA日志：`/var/folders/lx/q08bgxxn4qscb6nz1t4cf3wh0000gn/T/gimbal-final-qa-k77qbk1p.log`。这不是完整Keil编译/链接，也不是硬件验证。
 - 两阶段真实BO库模拟各8完整试验/2观测，原始重放/未验收导出通过；样例最佳均性能不可行。默认位置例的60s预算中止确认零状态，部分第9轮不注册。
-- 无数值实机配置、基线/性能验收或可发布PID结果；无自动参数发布/Flash写入。无关.DS_Store/.pi保留，未暂存/推送。完整Keil构建未验证，因此未自动做Git checkpoint。
+- 无数值实机配置、基线/性能验收或可发布PID结果；无自动参数发布/Flash写入。完整Keil构建未验证，因此软件收尾时未自动Git checkpoint。
+- 后续用户显式要求push供Windows端fetch：复核离线检查通过，60个任务文件提交为06f89ff并普通推送origin/feat_joint0，远端哈希核对一致。无关.DS_Store/.pi未纳入，现场验收暂停状态不变。
+- 用户随后明确目标https://github.com/littleblacklb/RV-CornerStone-MecArm.git；原origin为不同owner。已直接向指定URL普通推送feat_joint0，远端再次确认06f89ff。没有修改origin、强推或删除此前远端提交。
 
 ## 待确认
 - 具体安全数值、实机基线和性能阈值属于明确的后续准入任务，不是当前默认值或已验证事实。
